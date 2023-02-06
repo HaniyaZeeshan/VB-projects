@@ -1,0 +1,51 @@
+
+Module module1
+    Sub main()
+        Dim name(,) = {{"peter", "thomson"},
+                  {"john", "david"},
+                  {"ferrin", "samuel"},
+                  {"robert", "alex"}}
+        Dim score() = {95, 45, 70, 25}
+        For row = 0 To 3
+            For col = 0 To 1
+                console.write(name(row, col))
+            Next
+            console.writeline()
+        Next
+        bubblesort(name, score)
+        console.writeline("*array after sorting *")
+        For row = 0 To 3
+            For col = 0 To 1
+                console.write("   ")
+                console.write(name(row, col))
+            Next
+            console.writeline()
+        Next
+
+        console.readkey()
+    End Sub
+    Sub bubblesort(ByRef myarr As Array, ByRef marks As Array)
+        Dim temp1, temp2 As String
+        Dim temp3 As Integer
+        For i = 0 To 3
+            For j = 0 To 2
+                If marks(j) > marks(j + 1) Then
+                    temp3 = marks(j)
+                    marks(j) = marks(j + 1)
+                    marks(j + 1) = temp3
+                    temp1 = myarr(j, 0)
+                    temp2 = myarr(j, 1)
+                    myarr(j, 0) = myarr(j + 1, 0)
+                    myarr(j, 1) = myarr(j + 1, 1)
+                    myarr(j + 1, 0) = temp1
+                    myarr(j + 1, 1) = temp2
+                End If
+            Next
+        Next
+    End Sub
+
+
+
+
+
+End Module
