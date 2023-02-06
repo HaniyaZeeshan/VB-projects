@@ -1,0 +1,47 @@
+Module module1
+sub main()
+    Dim name(,) = {{"peter", "thomson"}, 
+              {"john", "david"}, 
+              {"ferrin", "samuel"},
+              {"robert", "alex"}}
+   Dim score() = {95, 45, 70, 25}
+   for row = 0 to 3
+       for col = 0 to 1
+           console.write(name(row,col))
+       next
+       console.writeline()
+   next
+   insort(name, score)
+   console.writeline("*array after sorting *")
+   for row = 0 to 3
+       for col = 0 to 1
+           console.write("   ")
+           console.write(name(row,col)) 
+       next
+       console.writeline()
+  next
+  
+  console.readkey()
+end sub
+sub insort(byref myarr as array, byref marks as array)
+dim maxsize, insert, temp3 as integer
+dim temp1, temp2 as string
+maxsize = 4
+for count = 0 to maxsize - 1 
+    temp1 = myarr(count, 0)
+    temp2 = myarr(count, 1)
+    temp3 = marks(count)
+    inser = count
+ while insert > 0 AndAlso marks(inser - 1) >= insert0
+    marks(insert) = marks(insert - 1)
+    myarr(insert, 0) = myarr(insert - 1, 0)
+    myarr(insert, 1) = myarr(insert - 1, 1)
+    insert = insert - 1
+ End While
+ myarr(insert, 0) = temp1
+ myarr(insert, 1) = temp2
+ marks(insert) = temp3
+next
+
+End Sub
+  
