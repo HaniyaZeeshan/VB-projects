@@ -1,0 +1,33 @@
+Module Module1
+
+    Sub BubbleSort(ByRef arr() As Integer)
+        Dim maxsize As Integer = arr.Length
+        Dim temp As Integer
+        Dim flag As Boolean
+
+        Do
+            flag = False
+            For i As Integer = 0 To maxsize - 2
+                If arr(i) > arr(i + 1) Then
+                    temp = arr(i)
+                    arr(i) = arr(i + 1)
+                    arr(i + 1) = temp
+                    flag = True
+                End If
+            Next
+            ma = maxsize - 1
+        Loop Until flag = False
+    End Sub
+
+    Sub Main()
+        Dim arr() As Integer = {56, 87, 12, 44, 46, 34, 98}
+        BubbleSort(arr)
+        Console.WriteLine("Sorted array is:")
+        For Each number As Integer In arr
+            Console.Write(number & " ")
+        Next
+        Console.ReadLine()
+    End Sub
+
+
+End Module
