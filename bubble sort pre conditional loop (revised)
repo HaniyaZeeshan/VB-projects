@@ -1,0 +1,27 @@
+
+Module Module1
+
+    Sub Main()
+        Dim numbers() As Integer = {56, 87, 12, 44, 46, 34, 98}
+        InsertionSort(numbers)
+        Console.WriteLine("Sorted array is:")
+        For Each number As Integer In numbers
+            Console.Write(number & " ")
+        Next
+        Console.ReadLine()
+    End Sub
+
+    Private Sub InsertionSort(ByRef arr As Integer())
+        Dim i As Integer, j As Integer, key As Integer
+        For i = 0 To UBound(arr) - 1
+            key = arr(i)
+            j = i - 1
+            While j >= 0 AndAlso arr(j) > key
+                arr(j + 1) = arr(j)
+                j = j - 1
+            End While
+            arr(j + 1) = key
+        Next i
+    End Sub
+
+End Module
