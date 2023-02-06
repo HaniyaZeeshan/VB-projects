@@ -1,0 +1,25 @@
+Module module1
+    Sub BubbleSort(ByRef index() As Integer)
+        Dim x As Integer = index.Length
+        For i As Integer = 0 To x - 1
+            For j As Integer = 0 To x - i - 2
+                If index(j) > index(j + 1) Then
+                    Dim temp As Integer = index(j)
+                    index(j) = index(j + 1)
+                    index(j + 1) = temp
+                End If
+            Next j
+        Next i
+    End Sub
+
+    Sub Main()
+        Dim index() As Integer = {56, 87, 12, 44, 46, 34, 98}
+        BubbleSort(index)
+        Console.WriteLine("Sorted array is:")
+        For Each number As Integer In index
+            Console.Write(number & " ")
+        Next
+        Console.ReadLine()
+    End Sub
+
+End Module
